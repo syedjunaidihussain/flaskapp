@@ -1,8 +1,4 @@
 # Starter pipeline
-- task: PythonScript@0
-  inputs:
-    scriptSource: 'filePath'
-    scriptPath: '/main.py'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -18,7 +14,8 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.6'
-- script: pip install -r requirements.txt
-  displayName: 'Install requirements'
-
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: 'main.py'
 
